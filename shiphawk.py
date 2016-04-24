@@ -7,7 +7,7 @@ client = Client(auth)
 
 app = Flask(__name__)
 
-token = "CAAYEgJivQC0BADelicwG55A3gnFTmZC2u8u8b6cw7IZBZCtsmZCgirvzTnf52Bj0qdeBuOnIejrHjGo3nINbt2EjZBHaQnZAmBAPDQBsAHMkxlLa1fUAHXALALgRPY5ZBZAuB30c9qb5XTODuZAsSUpCXpL9TdDAJvFaUhSdycOeL8ZCDsLBBZArnoSS1DzCHXXSugZD"
+token = "CAAIQgWB4KZCEBALEK87qe6a5opnlsvPOSxhA3oOAxq6VPynP5Sm1iDUhnu0wIxnd55De0bqlAZA13nUf8qQe7QVxXRBh5faHVZB0MI0K4oRBzbhZCU3Kys1wghZCBZAcc6zmHNuedwvvZCuAtlgyILdI552rDf3ylAeVzcgNSP1SfvImnKjsruShBw2GyFipjMZD"
 response_url = "https://graph.facebook.com/v2.6/me/messages?access_token="
 
 
@@ -18,7 +18,7 @@ def hello():
 
 @app.route("/webhook", methods=['GET'])
 def webhook_init():
-    if request.args.get('hub.verify_token') == 'anewworld':
+    if request.args.get('hub.verify_token') == 'sbhacks2016':
         return request.args.get('hub.challenge')
     else:
         return 'Error, wrong validation token'
