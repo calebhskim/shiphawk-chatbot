@@ -3,8 +3,6 @@ from flask import Flask
 from flask import request
 import requests
 
-client = Client(auth)
-
 app = Flask(__name__)
 
 token = "CAAIQgWB4KZCEBALEK87qe6a5opnlsvPOSxhA3oOAxq6VPynP5Sm1iDUhnu0wIxnd55De0bqlAZA13nUf8qQe7QVxXRBh5faHVZB0MI0K4oRBzbhZCU3Kys1wghZCBZAcc6zmHNuedwvvZCuAtlgyILdI552rDf3ylAeVzcgNSP1SfvImnKjsruShBw2GyFipjMZD"
@@ -20,8 +18,6 @@ def hello():
 def webhook_init():
     if request.args.get('hub.verify_token') == 'sbhacks2016':
         return request.args.get('hub.challenge')
-    else:
-        return 'Error, wrong validation token'
 
 
 def send_text_message(sender, text):
@@ -43,6 +39,7 @@ def message_handler():
             print("sending text message")
             text = message["message"]["text"]
             print("text read " + text)
+            send_text_message(sender, "syp")
 
 
     return ('', 200)
