@@ -24,12 +24,6 @@ def webhook_init():
         return 'Error, wrong validation token'
 
 
-def parse_food(text):
-    :wq
-
-
-
-
 def send_text_message(sender, text):
     response = {"recipient": {"id": sender}, "message": {"text": text}}
     r = requests.post(response_url + token, json=response)
