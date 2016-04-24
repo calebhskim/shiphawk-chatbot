@@ -41,6 +41,7 @@ def message_handler():
     message_events = jsonData["entry"][0]["messaging"]
     for message in message_events:
         print("new message")
+        print(message)
         sender = message["sender"]["id"]
         if "message" in message and "text" in message["message"]:
             print("sending text message")
