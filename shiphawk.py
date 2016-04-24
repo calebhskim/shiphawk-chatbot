@@ -47,8 +47,8 @@ def message_handler():
             print("sending text message")
             text = message["message"]["text"]
             print("text read " + text)
+            request_rate()
             send_text_message(sender, "sup")
-            send_text_message(sender, request_rate())
     return ('', 200)
 
 if __name__ == "__main__":
